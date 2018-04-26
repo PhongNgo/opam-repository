@@ -18,9 +18,9 @@ homepage: "http://www.cl.cam.ac.uk/~pes20/sail/"
 bug-reports: "https://github.com/rems-project/sail/issues"
 license: "BSD3"
 dev-repo: "https://github.com/rems-project/sail"
-build: [make "INSTALL_DIR=%{prefix}%" "isail"]
-install: [make "INSTALL_DIR=%{prefix}%" "install"]
-remove: [make "INSTALL_DIR=%{prefix}%" "uninstall"]
+build: [make "INSTALL_DIR=%{prefix}%" "SHARE_DIR=%{sail:share}%" "isail"]
+install: [make "INSTALL_DIR=%{prefix}%" "SHARE_DIR=%{sail:share}%" "install"]
+remove: [make "INSTALL_DIR=%{prefix}%" "SHARE_DIR=%{sail:share}%" "uninstall"]
 depends: [
   "ocamlfind"
   "ocamlbuild"
