@@ -14,7 +14,7 @@ For the moment we are sticking with opam 1.2 format so that we remain compatible
 This is a method I found works for releasing to this repository:
 
 0) Install an old version of `opam-publish` that does opam 1.2 format: `opam pin opam-publish=0.3.5`
-1) Increment the `version:` filed in the opam file in the repository root. `git` add and commit that change.
+1) Increment the `version:` filed in the opam file in the repository root. `git` add, commit and push that change.
 1) `git tag -a <version>` the repository with the same version
 1) `git push origin <version>` to push the tag to github
 1) Run `opam-publish prepare` in the root of the repository
