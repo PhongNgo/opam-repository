@@ -1,9 +1,9 @@
 This opam 2.0 repository contains packages released by the REMS project
-(currently lem, linksem and sail) that are not yes on the main opam repository.
+(currently lem, linksem and sail) that are not yet on the main opam repository.
 You can use it by adding it as an opam repository:
 
 ```
-opam repository add rems https://github.com/rems-project/opam-repository.git
+opam repository add rems https://github.com/rems-project/opam-repository.git#opam2
 ```
 
 For most packages, this is a temporary solution, as they are soon going to be
@@ -24,7 +24,7 @@ It is assumed that your package lives on it's own GitHub repository.
  4) Run opam publish to create a PR to this repository (From your project root)
 
 ```
-opam publish --repo=rems-project/opam-repository .
+opam publish --repo=rems-project/opam-repository -b opam2 .
 ```
   5) Merge the PR
 
