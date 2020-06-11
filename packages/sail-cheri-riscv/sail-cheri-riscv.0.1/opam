@@ -1,0 +1,42 @@
+opam-version: "2.0"
+maintainer: "Sail Devs <cl-sail-dev@lists.cam.ac.uk>"
+authors: [
+  "Alasdair Armstrong"
+  "Thomas Bauereiss"
+  "Brian Campbell"
+  "Shaked Flur"
+  "Jonathan French"
+  "Prashanth Mundkur"
+  "Robert Norton"
+  "Christopher Pulte"
+  "Peter Sewell"
+]
+homepage: "https://github.com/rems-project/sail-cheri-riscv/"
+bug-reports: "https://github.com/rems-project/sail-cheri-riscv/issues"
+license: "BSD3"
+dev-repo: "git+https://github.com/rems-project/sail-cheri-riscv.git"
+build: [
+  make
+  "LEM_DIR=%{lem:share}%"
+  "SAIL_DIR=%{sail:share}%"
+  "SAIL=sail"
+  "SAIL_RISCV_DIR=%{sail-riscv:share}%"
+  "opam-build"
+]
+depends: [
+  "ocaml" {>= "4.06.1"}
+  "ocamlfind"
+  "ocamlbuild"
+  "lem"
+  "sail" {>= "0.9"}
+  "sail-riscv" {>= "0.3"}
+  "linksem" {>= "0.3"}
+  "conf-gmp"
+  "conf-zlib"
+]
+synopsis:
+  "This package installs a CHERI-RISC-V emulator (64-bit only) built form the Sail model at https://github.com/rems-project/sail-cheri-riscv"
+url {
+  src: "https://github.com/CTSRD-CHERI/sail-cheri-riscv/archive/0.1.tar.gz"
+  checksum: "md5=69c8782a3a8ab85aaba52d987c837a34"
+}

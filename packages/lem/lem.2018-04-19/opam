@@ -1,0 +1,45 @@
+opam-version: "2.0"
+name: "lem"
+version: "2018-04-19"
+maintainer: "Lem Devs <cl-lem-dev@lists.cam.ac.uk>"
+homepage: "http://www.cl.cam.ac.uk/~pes20/lem/"
+dev-repo: "https://github.com/rems-project/lem"
+bug-reports: "https://github.com/rems-project/lem/issues"
+license: "part BSD3, part LGPL 2"
+build : [ make "INSTALL_DIR=%{prefix}%" ]
+install : [ make "INSTALL_DIR=%{prefix}%" "install" ]
+remove: [ make "INSTALL_DIR=%{prefix}%" "uninstall" ]
+depends: [
+  "ocaml" {>= "4.02.3"}
+  "ocamlfind"
+  "ocamlbuild"
+  "zarith"
+]
+synopsis:
+  "Lem is a tool for lightweight executable mathematics, for writing,"
+description: """
+managing, and publishing large-scale portable semantic definitions,
+with export to LaTeX, executable code (currently OCaml) and
+interactive theorem provers (currently Coq, HOL4, and Isabelle/HOL).
+
+It is also intended as an intermediate language for generating
+definitions from domain-specific tools, and for porting definitions
+between interactive theorem proving systems."""
+authors: [
+  "Dominic Mulligan"
+  "Francesco Zappa Nardelli"
+  "Gabriel Kerneis"
+  "Kathy Gray"
+  "Peter Boehm"
+  "Peter Sewell"
+  "Scott Owens"
+  "Thomas Tuerk"
+  "Brian Campbell"
+  "Thomas Williams"
+  "Shaked Flur"
+  "Thomas Bauereiss"
+]
+url {
+  src: "https://github.com/rems-project/lem/archive/2018-04-19.tar.gz"
+  checksum: "md5=4485cdc5299abf3f4de9f563e18dcf29"
+}

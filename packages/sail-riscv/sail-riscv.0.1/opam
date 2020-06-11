@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer: "Sail Devs <cl-sail-dev@lists.cam.ac.uk>"
+authors: [
+  "Alasdair Armstrong"
+  "Thomas Bauereiss"
+  "Brian Campbell"
+  "Shaked Flur"
+  "Jonathan French"
+  "Prashanth Mundkur"
+  "Robert Norton"
+  "Christopher Pulte"
+  "Peter Sewell"
+]
+homepage: "https://github.com/rems-project/sail-riscv/"
+bug-reports: "https://github.com/rems-project/sail-riscv/issues"
+license: "BSD3"
+dev-repo: "git+https://github.com/rems-project/sail-riscv.git"
+build: [make "INSTALL_DIR=%{prefix}%" "opam-build"]
+install: [make "INSTALL_DIR=%{prefix}%" "opam-install"]
+remove: [make "INSTALL_DIR=%{prefix}%" "opam-uninstall"]
+depends: [
+  "ocaml" {>= "4.06.1"}
+  "ocamlfind"
+  "ocamlbuild"
+  "sail" {>= "0.9"}
+  "linksem" {>= "0.3"}
+  "conf-gmp"
+  "conf-zlib"
+]
+synopsis:
+  "This package installs a RISC-V emulator (32 and 64 bits) built form the Sail model at https://github.com/rems-project/sail-riscv ."
+url {
+  src: "https://github.com/rems-project/sail-riscv/archive/0.1.tar.gz"
+  checksum: "md5=d6882d2b0cebeeae094bcfb1af01846d"
+}

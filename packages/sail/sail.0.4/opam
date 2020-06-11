@@ -1,0 +1,42 @@
+opam-version: "2.0"
+maintainer: "Sail Devs <cl-sail-dev@lists.cam.ac.uk>"
+authors: [
+  "Alasdair Armstrong"
+  "Thomas Bauereiss"
+  "Brian Campbell"
+  "Shaked Flur"
+  "Jonathan French"
+  "Kathy Gray"
+  "Robert Norton"
+  "Christopher Pulte"
+  "Peter Sewell"
+  "Mark Wassell"
+]
+homepage: "http://www.cl.cam.ac.uk/~pes20/sail/"
+bug-reports: "https://github.com/rems-project/sail/issues"
+license: "BSD3"
+dev-repo: "git+https://github.com/rems-project/sail.git"
+build: [make "INSTALL_DIR=%{prefix}%" "SHARE_DIR=%{sail:share}%" "isail"]
+install: [make "INSTALL_DIR=%{prefix}%" "SHARE_DIR=%{sail:share}%" "install"]
+remove: [
+  make "INSTALL_DIR=%{prefix}%" "SHARE_DIR=%{sail:share}%" "uninstall"
+]
+depends: [
+  "ocaml" {>= "4.06.0"}
+  "ocamlfind"
+  "ocamlbuild"
+  "zarith"
+  "menhir"
+  "linenoise"
+  "ott" {>= "0.28"}
+  "lem"
+  "linksem" {>= "0.3"}
+]
+synopsis:
+  "Sail is a language for describing the instruction semantics of processors."
+description:
+  "It has been used in several papers, available from http://www.cl.cam.ac.uk/~pes20/sail/."
+url {
+  src: "https://github.com/rems-project/sail/archive/0.4.tar.gz"
+  checksum: "md5=808603edde9981e03ac00e08d5f53f14"
+}
