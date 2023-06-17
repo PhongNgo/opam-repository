@@ -28,7 +28,7 @@ depends: [
   "zarith"
   "menhir"
   "linenoise"
-  "ott" {>= "0.28"}
+  "ott" {< "1.4"}
   "lem"
   "linksem"
 ]
